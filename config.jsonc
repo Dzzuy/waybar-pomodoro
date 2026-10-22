@@ -1,0 +1,13 @@
+// 1) Add "custom/pomodoro" as the FIRST entry of "modules-right"
+//    "modules-right": ["custom/pomodoro", "group/tray-expander", "bluetooth", "network", ...],
+// 2) Paste this module block alongside your other modules:
+"custom/pomodoro": {
+  "exec": "~/.config/waybar/scripts/pomodoro.sh status",
+  "return-type": "json",
+  "interval": 1,
+  "signal": 8,
+  "tooltip": true,
+  "on-click": "~/.config/waybar/scripts/pomodoro.sh toggle",
+  "on-click-right": "~/.config/waybar/scripts/pomodoro.sh reset",
+  "on-click-middle": "alacritty --class pomodoro -e ~/.config/waybar/scripts/pomodoro-tui.py"
+}

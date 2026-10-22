@@ -1,0 +1,15 @@
+/* waybar-pomodoro — append to ~/.config/waybar/style.css */
+#custom-pomodoro {
+  padding: 0 10px;
+  margin: 0 4px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+#custom-pomodoro.idle    { opacity: 0.55; }
+#custom-pomodoro.work.running  { color: #f38ba8; }
+#custom-pomodoro.short.running { color: #94e2d5; }
+#custom-pomodoro.long.running  { color: #89b4fa; }
+#custom-pomodoro.paused  { color: #f9e2af; animation: pomo-breathe 1.4s ease-in-out infinite alternate; }
+#custom-pomodoro.ending  { animation: pomo-breathe 0.5s ease-in-out infinite alternate; }
+
+@keyframes pomo-breathe { to { opacity: 0.35; } }
